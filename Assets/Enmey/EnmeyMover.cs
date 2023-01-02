@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnmeyMover : MonoBehaviour
 {
     [SerializeField] List<WayPoint> path = new List<WayPoint>();
-    [SerializeField] float waiteTime = 1f;
+    [SerializeField] [Range(0f, 5f)] float movementSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +16,18 @@ public class EnmeyMover : MonoBehaviour
     {
         foreach(WayPoint wayPoint in path) 
         {
-            transform.position = wayPoint.transform.position;
-            yield return new WaitForSeconds(waiteTime);
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = wayPoint.transform.position;
+            float travelPercent = 0f;
+
+            transform.LookAt(endPosition);
+
+            while(travelPercent < 1)
+            {
+                travelPercent += Time.deltaTime * movementSpeed;
+                transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
 }
