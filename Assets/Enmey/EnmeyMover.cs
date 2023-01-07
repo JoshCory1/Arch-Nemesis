@@ -9,7 +9,23 @@ public class EnmeyMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        findPath();
+        returnToStart();
         StartCoroutine(fallowPath());
+    }
+    void findPath()
+    {
+        path.Clear();
+        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+        foreach(GameObject waypoint in waypoints)
+        {
+            path.Add(waypoint.GetComponent<WayPoint>());
+        }
+    }
+
+    void returnToStart()
+    {
+        transform.position = path[0].transform.position;
     }
 
     IEnumerator fallowPath()
@@ -29,6 +45,7 @@ public class EnmeyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        Destroy(gameObject);
     }
 }
 

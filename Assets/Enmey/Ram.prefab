@@ -93,6 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5672325927823913723}
   - component: {fileID: 70121574606391213}
+  - component: {fileID: 5298798137639310755}
+  - component: {fileID: 5175917651594110020}
   m_Layer: 0
   m_Name: Ram
   m_TagString: Untagged
@@ -129,3 +131,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.3, y: 4.53, z: 5.3}
   m_Center: {x: 0, y: 2.56, z: 0}
+--- !u!114 &5298798137639310755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040643765344069697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aeda32bd4cf4534d9aad8e214bc6f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 5
+--- !u!114 &5175917651594110020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040643765344069697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05dff3c6dcb068b40a865e52e100b92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: []
+  movementSpeed: 1
