@@ -6,6 +6,7 @@ public class WayPoint : MonoBehaviour
 {
     [SerializeField] bool isPlaceable;
     [SerializeField] GameObject towerPrefab;
+    public bool IsPlaceable { get { return isPlaceable; } }
     // Update is called once per frame
     void OnMouseDown() 
     {
