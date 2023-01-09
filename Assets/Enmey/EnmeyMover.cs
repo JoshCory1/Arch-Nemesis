@@ -7,7 +7,7 @@ public class EnmeyMover : MonoBehaviour
     [SerializeField] List<WayPoint> path = new List<WayPoint>();
     [SerializeField] [Range(0f, 5f)] float movementSpeed = 1f;
     // Start is called before the first frame update
-    void Start()
+     void OnEnable()
     {
         findPath();
         returnToStart();
@@ -45,7 +45,7 @@ public class EnmeyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
 
